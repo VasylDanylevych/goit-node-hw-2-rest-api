@@ -12,4 +12,12 @@ const userUpdateSubscriptionSchema = Joi.object({
         .required(),
 });
 
-module.exports = { userSchema, userUpdateSubscriptionSchema };
+const userEmailSchema = Joi.object({
+    email: Joi.string().pattern(emailRegexp).required(),
+});
+
+module.exports = {
+    userSchema,
+    userUpdateSubscriptionSchema,
+    userEmailSchema,
+};
